@@ -610,6 +610,21 @@ namespace ytdlp
             string downloads = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Downloads\ytdlps";
 
             savePath.Text = downloads;
+
+            string? exePath = Environment.ProcessPath;
+            if (!string.IsNullOrEmpty(exePath) && File.Exists(exePath + ".old"))
+            {
+                try
+                {
+                    File.Delete(exePath + ".old");
+                }
+                catch { }
+            }
+        }
+
+        private void settings_Click(object sender, EventArgs e)
+        {
+            new setting().ShowDialog();
         }
     }
 }

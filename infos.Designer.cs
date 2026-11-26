@@ -38,6 +38,7 @@
             label1 = new Label();
             longth = new Label();
             fullTitle = new ToolTip(components);
+            noImage = new Label();
             ((System.ComponentModel.ISupportInitialize)timg).BeginInit();
             SuspendLayout();
             // 
@@ -145,12 +146,25 @@
             fullTitle.BackColor = Color.DimGray;
             fullTitle.ForeColor = Color.WhiteSmoke;
             // 
+            // noImage
+            // 
+            noImage.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            noImage.Font = new Font("Microsoft JhengHei UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 136);
+            noImage.Location = new Point(1, 121);
+            noImage.Name = "noImage";
+            noImage.Size = new Size(796, 291);
+            noImage.TabIndex = 8;
+            noImage.Text = "無法預覽縮圖";
+            noImage.TextAlign = ContentAlignment.MiddleCenter;
+            noImage.Visible = false;
+            // 
             // infos
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(798, 496);
+            Controls.Add(noImage);
             Controls.Add(longth);
             Controls.Add(label1);
             Controls.Add(outputFormat);
@@ -184,5 +198,6 @@
         private Label label1;
         private Label longth;
         private ToolTip fullTitle;
+        private Label noImage;
     }
 }

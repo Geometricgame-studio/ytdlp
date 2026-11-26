@@ -38,6 +38,7 @@
             panel2 = new Panel();
             savePath = new TextBox();
             icon = new NotifyIcon(components);
+            settings = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -67,7 +68,7 @@
             targetUrl.Margin = new Padding(4);
             targetUrl.Name = "targetUrl";
             targetUrl.PlaceholderText = "輸入 URL...";
-            targetUrl.Size = new Size(1121, 36);
+            targetUrl.Size = new Size(1107, 36);
             targetUrl.TabIndex = 1;
             // 
             // list
@@ -111,10 +112,10 @@
             panel2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.WhiteSmoke;
             panel2.Controls.Add(savePath);
-            panel2.Location = new Point(26, 460);
+            panel2.Location = new Point(165, 460);
             panel2.Name = "panel2";
             panel2.Padding = new Padding(10);
-            panel2.Size = new Size(1135, 70);
+            panel2.Size = new Size(996, 70);
             panel2.TabIndex = 6;
             // 
             // savePath
@@ -126,7 +127,7 @@
             savePath.Margin = new Padding(4);
             savePath.Name = "savePath";
             savePath.PlaceholderText = "影片下載位置...";
-            savePath.Size = new Size(1121, 36);
+            savePath.Size = new Size(1009, 36);
             savePath.TabIndex = 1;
             // 
             // icon
@@ -135,12 +136,28 @@
             icon.Text = "Youtube 下載器";
             icon.Visible = true;
             // 
+            // settings
+            // 
+            settings.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            settings.BackColor = Color.WhiteSmoke;
+            settings.FlatAppearance.BorderSize = 0;
+            settings.FlatStyle = FlatStyle.Flat;
+            settings.Location = new Point(15, 461);
+            settings.Margin = new Padding(4);
+            settings.Name = "settings";
+            settings.Size = new Size(143, 70);
+            settings.TabIndex = 7;
+            settings.Text = "設定";
+            settings.UseVisualStyleBackColor = false;
+            settings.Click += settings_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(14F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1340, 542);
+            Controls.Add(settings);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(select);
@@ -170,5 +187,6 @@
         private Panel panel2;
         private TextBox savePath;
         private NotifyIcon icon;
+        private Button settings;
     }
 }

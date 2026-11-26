@@ -70,7 +70,14 @@ namespace ytdlp
 
         async private void load_timg(string url)
         {
-            timg.Load(url);
+            try
+            {
+                timg.Load(url);
+            }
+            catch
+            {
+                noImage.Visible = true;
+            }
         }
 
         private void infos_Load(object sender, EventArgs e)
